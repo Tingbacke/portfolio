@@ -131,6 +131,12 @@ body {
     /* Ensure the header takes up the full width of the grid. */
 }
 
+.worksubsub {
+    grid-column: 1;
+    justify-self: stretch; /* Ensures it spans the full width of the grid area */
+    width: 100%;
+}
+
 /* --- --- --- --- SECTIONS --- --- --- --- */
 
 .home,
