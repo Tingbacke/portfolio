@@ -3,6 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     background: linear-gradient(0deg, rgba(255, 94, 58, 1) 0%, rgba(255, 155, 58, 1) 20%, rgba(255, 204, 58, 1) 50%, rgba(163, 211, 91, 1) 80%, rgba(58, 155, 255, 1) 100%);
+    background-color: #333;
 }
 
 /* --- --- --- --- MENU PANES --- --- --- --- */
@@ -29,24 +30,17 @@ body {
 .menu-panel ul li {
     margin: 36px 0;
     font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .menu-panel ul li a {
     text-decoration: none;
     font-size: 18px;
     color: #333;
-    font-family: 'Montserrat', sans-serif;
     transition: color 0.3s;
-}
-
-.menu-panel ul li a:hover {
-    color: white;
 }
 
 .menu-panel ul li.active a {
     font-weight: bold;
-    color: #333;
     border-bottom: 2px solid black;
     padding-bottom: 4px;
 }
@@ -84,8 +78,6 @@ body {
 .contact-panel ul li {
     margin: 36px 0;
     font-size: 18px;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-panel ul li a {
@@ -102,34 +94,28 @@ body {
 
 /* --- --- --- --- SECTION HEADERS --- --- --- --- */
 
+
 .section-headers {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.headers {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 8rem;
-    color: #333;
-    margin: 0;
-    position: absolute;
-    top: 20px;
-    left: 220px;
-    z-index: 1;
     text-transform: uppercase;
+    margin: 0;
 }
 
-.home-subheader,
-.about-subheader,
-.work-subheader {
+.subheaders {
     font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    text-align: left;
-    color: #333;
-
+    font-weight: 400;
+    margin: 0;
+    margin-top: -30px;
 }
 
-.work-subheader {
-    grid-column: 1 / -1;
-    /* Ensure the header takes up the full width of the grid. */
-}
 
 /* --- --- --- --- SECTIONS --- --- --- --- */
 
@@ -140,18 +126,21 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 200px;
-    padding-top: 100px;
     box-sizing: border-box;
     min-height: 100vh;
 }
 
 .footer {
     display: flex;
-    height: 80px;
+    height: 100px;
     background-color: #00000020;
     color: #333;
     align-items: center;
     justify-content: center;
+}
+
+.copyright-text {
+    margin-bottom: 0px;
 }
 
 /* --- --- --- --- Section contents --- --- --- --- */
@@ -199,49 +188,43 @@ body {
 .home-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 20px;
     max-width: 900px;
-    margin: 90px auto;
-    border-radius: 8px;
+    margin: 60px auto;
     box-sizing: border-box;
 }
 
 /* Profile div */
 .profile-div {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto; /* Ensure it's centered */
+    margin-top: -40px;
+    gap: 20px;
+    
 }
 
 .profile-div img {
     width: 240px;
 }
 
-.profile-div p {
-    margin: 10px 0;
-}
-
 .profile-info {
-    display: flex;
-    flex-direction: column;
-    margin-top: -20px;
+    width: 80%;
 }
 
 .profile-div .name {
-    font-family: 'Poppins', cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 3rem;
+    margin: 0;
 }
 
 .profile-div .description {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #333;
-    margin-top: -12px;
+    margin: 0;
 }
+
 
 /* --- --- --- --- About container --- --- --- --- */
 
@@ -250,7 +233,7 @@ body {
     grid-template-columns: 1fr;
     grid-gap: 16px;
     max-width: 900px;
-    margin: 90px auto;
+    margin: 60px auto;
     border-radius: 8px;
     box-sizing: border-box;
 }
@@ -261,7 +244,8 @@ body {
     padding: 16px 16px;
     border-radius: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    height: auto; /* Content fit */
+    height: auto;
+    /* Content fit */
     text-align: left;
     background-color: #ffffff80;
 }
@@ -313,7 +297,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin: 90px auto;
+    margin: 60px auto;
     border-radius: 8px;
     max-width: 900px;
 }

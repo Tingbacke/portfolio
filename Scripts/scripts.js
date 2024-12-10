@@ -1,4 +1,3 @@
-
 // --- Menu section highlights when scrolling
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
@@ -8,14 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
+                // Ensure the section is more than 60% visible before applying the active class
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
                     menuItems.forEach((item) => item.classList.remove('active'));
                     const activeItem = document.querySelector(`.menu-panel ul li a[href="#${entry.target.id}"]`).parentNode;
                     activeItem.classList.add('active');
                 }
             });
         },
-        { threshold: 0.3, rootMargin: '-100px 0px 0px 0px' } // Adjust threshold and offset.
+        { threshold: 0.6, rootMargin: '-100px 0px 0px 0px' } // Adjust threshold and offset to reduce transient highlights.
     );
 
     // Observe all sections
@@ -27,10 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
+
+            // Ensure active class is applied on click
+            menuItems.forEach((item) => item.classList.remove('active'));
+            link.parentNode.classList.add('active');
+
+            // Scroll to the target section with smooth behavior
             targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 });
+
 
 
 // --- Emoji hover effect on cases.
@@ -82,6 +89,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+/* Contact-panel -> Footer */
+document.addEventListener('DOMContentLoaded', () => {
+    const contactPanel = document.querySelector('.contact-panel');
+    const footer = document.querySelector('.footer');
+    const originalParent = contactPanel.parentElement;
+
+    const moveContactPanel = () => {
+        if (window.innerWidth <= 768) {
+            if (!footer.contains(contactPanel)) {
+                footer.prepend(contactPanel); // Move contact-panel into footer
+            }
+        } else {
+            if (originalParent && !originalParent.contains(contactPanel)) {
+                originalParent.appendChild(contactPanel); // Restore contact-panel
+            }
+        }
+    };
+
+    // Initial check
+    moveContactPanel();
+
+    // Re-check on window resize
+    window.addEventListener('resize', moveContactPanel);
+});
+
 
 
 
