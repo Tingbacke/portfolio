@@ -43,12 +43,10 @@
         padding-bottom: 4px;
     }
 
-    /* Active menu link style */
     .menu-panel ul li.active a {
         font-weight: bold;
         color: white;
         border-bottom: 2px solid white;
-        /* Active underline */
     }
 
 
@@ -83,12 +81,7 @@
         margin-top: -24px;
     }
 
-
-
-
-
-
-    /* --- Sections --- */
+    /* --- --- --- SECTIONS --- --- --- */
     .home,
     .about,
     .work {
@@ -111,7 +104,7 @@
 
     .subheaders {
         font-size: 1.5rem;
-        margin-top: -20px;
+        margin-top: -30px;
     }
 
     /* --- Home Container --- */
@@ -121,7 +114,6 @@
     }
 
     .profile-div {
-        margin-top: -100px;
         gap: 16px;
     }
 
@@ -175,22 +167,26 @@
         margin: 30px auto;
     }
 
-    .work-item {
-        font-size: 0.9rem;
-    }
-
     .work-title {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .work-description {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .work-image img {
         height: auto;
     }
 
+}
 
+/* White links when contact-panel is in the footer */
+.footer .contact-panel ul li a {
+    color: white;
+}
 
+/* Optional: Hover effect for footer links */
+.footer .contact-panel ul li a:hover {
+    color: #ffcc58; /* Add a contrasting color for hover effect */
 }

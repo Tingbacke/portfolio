@@ -39,27 +39,45 @@ body {
     font-size: 18px;
 }
 
+/* Base styles for menu items */
 .menu-panel ul li a {
     text-decoration: none;
     font-size: 18px;
     color: #333;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for menu items */
+.menu-panel ul li a:hover {
+    color: #555;
+}
+
+/* Styles for the active menu item */
 .menu-panel ul li.active a {
     font-weight: bold;
-    border-bottom: 2px solid black;
-    padding-bottom: 4px;
+    color: #000; /* Highlight active item */
+    position: relative;
 }
 
+/* Underline effect for the active menu item */
 .menu-panel ul li.active a::after {
     content: '';
-    display: block;
+    position: absolute;
+    bottom: -4px; /* Position underline below the text */
+    left: 0;
     width: 100%;
     height: 2px;
-    background-color: #333;
-    margin-top: 4px;
+    background-color: #000;
+    transform: scaleX(1); /* Show underline for active items */
+    transition: transform 0.3s ease;
 }
+
+/* Initial state for inactive menu items (no underline) */
+.menu-panel ul li:not(.active) a::after {
+    transform: scaleX(0); /* Hide underline */
+}
+
+
 
 /*  Contact panel  */
 .contact-panel {
@@ -290,7 +308,6 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: left;
-    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -320,7 +337,7 @@ body {
 }
 
 .work-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #646464;
     margin: 6px 0 0;
 }

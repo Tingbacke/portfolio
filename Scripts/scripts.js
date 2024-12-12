@@ -1,55 +1,27 @@
-// Wait for the document to be fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-    const menuLinks = document.querySelectorAll('.menu-panel a');
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
+/* --- --- Menu and scroll behaviour --- --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const menuLinks = document.querySelectorAll('.menu-panel ul li a');
 
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
+    const updateActiveLink = () => {
+        let index = sections.length;
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        while (--index >= 0 && window.scrollY + 100 < sections[index].offsetTop) {}
 
-                setActiveMenuItem(targetId);
-            }
-        });
-    });
-
-    // Function to update the active class in the menu panel
-    function setActiveMenuItem(activeId) {
-        menuLinks.forEach(link => {
-            const menuItem = link.parentElement;
-            if (link.getAttribute('href').substring(1) === activeId) {
-                menuItem.classList.add('active');
-            } else {
-                menuItem.classList.remove('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', function() {
-        let currentSection = null;
-        document.querySelectorAll('.sections section').forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 0 && rect.bottom >= 0) {
-                currentSection = section.id;
-            }
-        });
-        if (currentSection) {
-            setActiveMenuItem(currentSection);
+        menuLinks.forEach((link) => link.parentElement.classList.remove('active'));
+        if (index >= 0) {
+            menuLinks[index].parentElement.classList.add('active');
         }
-    });
+    };
+
+    // Run on scroll and page load
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
 });
 
 
-
-
-// --- --- Emoji hover effect on cases. --- ---
+/* --- --- Emoji hover effect on cases. --- --- */
 document.addEventListener('DOMContentLoaded', function () {
     const workHoverItems = [
         { className: 'work-item-smart-home', emoji: '💡' },
@@ -72,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// --- --- Emojis --> SVGs --- ---
+/* --- --- Emojis --> SVGs --- --- */
 document.addEventListener('DOMContentLoaded', function () {
     const aboutEmojis = [
         { className: 'about-music-emoji', emoji: '🎸' },
@@ -100,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* Contact-panel -> Footer */
+/* --- Contact-panel -> Footer on smartphones --- */
 document.addEventListener('DOMContentLoaded', () => {
     const contactPanel = document.querySelector('.contact-panel');
     const footer = document.querySelector('.footer');
