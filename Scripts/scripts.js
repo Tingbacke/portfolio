@@ -1,46 +1,55 @@
-// --- Menu section highlights when scrolling
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    const menuItems = document.querySelectorAll('.menu-panel ul li');
+// Wait for the document to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    const menuLinks = document.querySelectorAll('.menu-panel a');
 
-    // IntersectionObserver for dynamic menu highlighting
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                // Ensure the section is more than 60% visible before applying the active class
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-                    menuItems.forEach((item) => item.classList.remove('active'));
-                    const activeItem = document.querySelector(`.menu-panel ul li a[href="#${entry.target.id}"]`).parentNode;
-                    activeItem.classList.add('active');
-                }
-            });
-        },
-        { threshold: 0.6, rootMargin: '-100px 0px 0px 0px' } // Adjust threshold and offset to reduce transient highlights.
-    );
-
-    // Observe all sections
-    sections.forEach((section) => observer.observe(section));
-
-    // Smooth scrolling for menu links
-    document.querySelectorAll('.menu-panel ul li a').forEach((link) => {
-        link.addEventListener('click', (event) => {
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
             event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
+
+            const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
 
-            // Ensure active class is applied on click
-            menuItems.forEach((item) => item.classList.remove('active'));
-            link.parentNode.classList.add('active');
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
-            // Scroll to the target section with smooth behavior
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setActiveMenuItem(targetId);
+            }
         });
+    });
+
+    // Function to update the active class in the menu panel
+    function setActiveMenuItem(activeId) {
+        menuLinks.forEach(link => {
+            const menuItem = link.parentElement;
+            if (link.getAttribute('href').substring(1) === activeId) {
+                menuItem.classList.add('active');
+            } else {
+                menuItem.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', function() {
+        let currentSection = null;
+        document.querySelectorAll('.sections section').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 0 && rect.bottom >= 0) {
+                currentSection = section.id;
+            }
+        });
+        if (currentSection) {
+            setActiveMenuItem(currentSection);
+        }
     });
 });
 
 
 
-// --- Emoji hover effect on cases.
+
+// --- --- Emoji hover effect on cases. --- ---
 document.addEventListener('DOMContentLoaded', function () {
     const workHoverItems = [
         { className: 'work-item-smart-home', emoji: '💡' },
@@ -63,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Emojis --> SVGs
+// --- --- Emojis --> SVGs --- ---
 document.addEventListener('DOMContentLoaded', function () {
     const aboutEmojis = [
         { className: 'about-music-emoji', emoji: '🎸' },
