@@ -1,0 +1,118 @@
+@media screen and (max-width: 1200px) {
+    /* General body adjustments */
+    body {
+        padding: 0;
+        font-size: 16px;
+    }
+
+    /* Menu panel adjustments */
+    .menu-panel {
+        width: 140px; /* Reduce menu width for smaller screens */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .menu-panel ul li {
+        margin: 24px 0;
+    }
+
+    .menu-panel ul li a {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Contact panel adjustments */
+    .contact-panel {
+        width: 160px;
+    }
+
+    .contact-panel ul li {
+        margin: 24px 0;
+    }
+
+    .contact-panel ul li a {
+        font-size: 14px;
+    }
+
+    /* Section adjustments */
+    .home,
+    .about,
+    .work {
+        padding: 40px 100px; /* Reduce padding for smaller screens */
+    }
+
+    /* Section header adjustments */
+    .headers {
+        font-size: 5rem; /* Scale down header font size */
+    }
+
+    .subheaders {
+        font-size: 2rem; /* Scale down subheader font size */
+        margin-top: -10px; /* Adjust spacing */
+    }
+
+    /* Content container adjustments */
+    .home-container,
+    .about-container,
+    .work-container {
+        max-width: 700px; /* Reduce max width */
+        margin: 40px auto; /* Adjust spacing */
+        padding: 0 16px; /* Add smaller padding for better fit */
+    }
+
+    /* Profile adjustments */
+    .profile-div img {
+        width: 200px; /* Scale down image */
+    }
+
+    .profile-div .name {
+        font-size: 2.5rem; /* Adjust name font size */
+    }
+
+    .profile-div .description {
+        font-size: 1.2rem; /* Adjust description font size */
+    }
+
+    /* About section adjustments */
+    .about-container {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+
+    .about-item {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-emoji {
+        margin-bottom: 16px; /* Add spacing */
+    }
+
+    .about-info {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    /* Work section adjustments */
+    .work-container {
+        grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns */
+        gap: 16px;
+    }
+
+    .work-item {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .work-title {
+        font-size: 0.9rem;
+    }
+
+    .work-description {
+        font-size: 0.8rem;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        height: 80px; /* Reduce footer height */
+    }
+
+    .copyright-text {
+        font-size: 14px; /* Adjust footer text size */
+    }
+}
