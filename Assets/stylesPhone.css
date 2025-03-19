@@ -73,7 +73,6 @@
     /* --- --- --- FOOTER --- --- --- */
 
     .footer {
-        /* !!!! Some work needed here to layout properly !!!! */
         padding: 16px;
         flex-wrap: wrap;
     }
@@ -112,8 +111,7 @@
     /* --- Home Container --- */
     .home-container {
         max-width: 100%;
-        margin: 30px auto;
-
+        margin: 0 auto;
         display: flex;
         align-items: start;
         justify-content: center;
@@ -121,17 +119,21 @@
     }
 
     .profile-div {
-        gap: 24px;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -64px;
     }
 
     .profile-div img {
-        margin-top: 16px;
         width: 220px;
     }
 
     .profile-info {
         width: 90%;
-        margin-top: -20px;
+        margin-top: -80px;
         text-align: center;
     }
 
