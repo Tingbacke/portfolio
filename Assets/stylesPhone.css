@@ -1,10 +1,11 @@
 @media (max-width: 768px) {
     body {
+        min-height: 100vh;
+        height: -webkit-fill-available; /* iOS Safari fix (see also home-container) */
         font-size: 14px;
         padding: 0;
     }
-    
-    
+
     /* --- --- --- --- MENU PANES --- --- --- --- */
 
     /* Menu panel */
@@ -74,7 +75,7 @@
     .footer {
         /* !!!! Some work needed here to layout properly !!!! */
         padding: 16px;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
     }
 
     .copyright-text {
@@ -112,13 +113,19 @@
     .home-container {
         max-width: 100%;
         margin: 30px auto;
+
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        min-height: 100vh;
     }
 
     .profile-div {
-        gap: 16px;
+        gap: 24px;
     }
 
     .profile-div img {
+        margin-top: 16px;
         width: 220px;
     }
 
@@ -190,5 +197,6 @@
 
 /* Optional: Hover effect for footer links */
 .footer .contact-panel ul li a:hover {
-    color: #ffcc58; /* Add a contrasting color for hover effect */
+    color: #ffcc58;
+    /* Add a contrasting color for hover effect */
 }

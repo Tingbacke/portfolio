@@ -97,6 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', moveContactPanel);
 });
 
+// Toggle profile image change on click
+document.addEventListener('DOMContentLoaded', function () {
+    const profileImg = document.querySelector('.profile-div img');
+
+    if (profileImg) {
+        profileImg.style.cursor = 'pointer'; // Ensure hand cursor
+
+        profileImg.addEventListener('click', function () {
+            profileImg.src = profileImg.src.includes('jt.png') 
+                ? 'Assets/Images/jt2.png' 
+                : 'Assets/Images/jt.png';
+        });
+    }
+});
+
+
+
+
 
 
 
