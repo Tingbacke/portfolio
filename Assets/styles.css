@@ -55,7 +55,7 @@ body {
 /* Styles for the active menu item */
 .menu-panel ul li.active a {
     font-weight: bold;
-    color: #000; /* Highlight active item */
+    color: #000;
     position: relative;
 }
 
@@ -63,12 +63,12 @@ body {
 .menu-panel ul li.active a::after {
     content: '';
     position: absolute;
-    bottom: -4px; /* Position underline below the text */
+    bottom: -4px;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: #000;
-    transform: scaleX(1); /* Show underline for active items */
+    transform: scaleX(1);
     transition: transform 0.3s ease;
 }
 
@@ -204,7 +204,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Ensure it's centered */
+    margin: 0 auto;
     margin-top: -60px;
 }
 
@@ -214,7 +214,7 @@ body {
 }
 
 .profile-div img:hover {
-    content: url(/Assets/Images/jt2.png); /* Path to the new image */
+    content: url('/Assets/Images/jt2.png');
 }
 
 .profile-info {
