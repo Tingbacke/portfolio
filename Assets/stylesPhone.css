@@ -99,6 +99,7 @@
 
     /* --- Section Headers --- */
     .headers {
+        margin-top: 12px;
         font-size: 4rem;
     }
 
@@ -124,6 +125,7 @@
     .profile-info {
         width: 90%;
         margin-top: -20px;
+        text-align: center;
     }
 
     .profile-div .name {
