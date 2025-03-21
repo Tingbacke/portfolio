@@ -43,19 +43,19 @@ body {
 .menu-panel ul li a {
     text-decoration: none;
     font-size: 18px;
-    color: #333;
+    color: #1a1a1a;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect for menu items */
 .menu-panel ul li a:hover {
-    color: #555;
+    color: #ffffff;
 }
 
 /* Styles for the active menu item */
 .menu-panel ul li.active a {
     font-weight: bold;
-    color: #000;
+    color: #1a1a1a;
     position: relative;
 }
 
@@ -108,7 +108,7 @@ body {
 .contact-panel ul li a {
     text-decoration: none;
     font-size: 18px;
-    color: #333;
+    color: #1a1a1a;
     font-family: 'Montserrat', sans-serif;
     transition: color 0.3s;
 }
