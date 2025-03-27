@@ -10,7 +10,7 @@ body {
 }
 
 .sections {
-    background: linear-gradient(0deg, rgba(255, 94, 58, 1) 0%, rgba(255, 155, 58, 1) 20%, rgba(255, 204, 58, 1) 50%, rgba(163, 211, 91, 1) 80%, rgba(58, 155, 255, 1) 100%);
+    background-image: linear-gradient(to left top, #da4f98, #ee678b, #f98284, #fe9e85, #ffba8f, #ffc094, #ffc79a, #ffcda0, #ffc09a, #ffb397, #ffa697, #ff9a9a);
 }
 
 /* --- --- --- --- MENU PANES --- --- --- --- */
@@ -24,8 +24,9 @@ body {
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    background-color: #33333310;
+    background-color: #FFDDAB10;
     margin-left: 0px;
+    border-right: 2px solid #00000060;
 }
 
 .menu-panel ul {
@@ -90,7 +91,8 @@ body {
     right: 0;
     height: 100%;
     width: 180px;
-    background-color: #33333310;
+    background-color: #FFDDAB10;
+    border-left: 2px solid #00000060;
 }
 
 .contact-panel ul {
