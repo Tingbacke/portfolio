@@ -9,6 +9,7 @@
     .menu-panel {
         width: 140px; /* Reduce menu width for smaller screens */
         font-size: 14px; /* Adjust font size */
+        border: 0px;
     }
 
     .menu-panel ul li {
@@ -22,6 +23,7 @@
     /* Contact panel adjustments */
     .contact-panel {
         width: 160px;
+        border: 0px;
     }
 
     .contact-panel ul li {

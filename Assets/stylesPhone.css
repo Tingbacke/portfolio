@@ -19,6 +19,7 @@
         z-index: 1000;
         background-color: #333;
         padding: 0;
+        border: 0px;
     }
 
     .menu-panel ul {
@@ -56,6 +57,7 @@
         width: 100%;
         margin-top: -20px;
         background-color: transparent;
+        border: 0px;
     }
 
     .contact-panel ul {
