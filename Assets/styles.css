@@ -6,11 +6,17 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: #1A1A1A;
-    background-color: #333;
+    background-color: #8E7DBE;
 }
 
+
+
+
 .sections {
-    background-image: linear-gradient(to left top, #da4f98, #ee678b, #f98284, #fe9e85, #ffba8f, #ffc094, #ffc79a, #ffcda0, #ffc09a, #ffb397, #ffa697, #ff9a9a);
+    background-image: url('Images/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* --- --- --- --- MENU PANES --- --- --- --- */
@@ -19,12 +25,13 @@ body {
 .menu-panel {
     display: flex;
     position: fixed;
-    height: 100vh;
+    top: 0;
+    height: 200px;
     width: 180px;
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    background-color: #FFDDAB10;
+    background-color: #E69DB810;
     margin-left: 0px;
     border-right: 2px solid #00000060;
 }
@@ -36,7 +43,7 @@ body {
 }
 
 .menu-panel ul li {
-    margin: 36px 0;
+    margin: 42px 0;
     font-size: 18px;
 }
 
@@ -75,48 +82,8 @@ body {
 
 /* Initial state for inactive menu items (no underline) */
 .menu-panel ul li:not(.active) a::after {
-    transform: scaleX(0); /* Hide underline */
-}
-
-
-
-/*  Contact panel  */
-.contact-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 180px;
-    background-color: #FFDDAB10;
-    border-left: 2px solid #00000060;
-}
-
-.contact-panel ul {
-    list-style: none;
-    padding: 0;
-    margin: 40px;
-    text-align: left;
-}
-
-.contact-panel ul li {
-    margin: 36px 0;
-    font-size: 18px;
-}
-
-.contact-panel ul li a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s;
-}
-
-.contact-panel ul li a:hover {
-    color: white;
+    transform: scaleX(0);
+    /* Hide underline */
 }
 
 /* --- --- --- --- SECTION HEADERS --- --- --- --- */
@@ -145,7 +112,7 @@ body {
     font-size: 2.5rem;
     font-weight: 400;
     margin-top: -50px;
-    
+
 }
 
 
@@ -164,19 +131,57 @@ body {
 
 .footer {
     display: flex;
-    height: 100px;
+    height: 180px;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 8px;
 }
 
+.contact-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+.contact-panel ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+}
+
+.contact-panel ul li {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    width: 100px;
+    padding: 16px;
+}
+
+.contact-panel ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s;
+}
+
+.contact-panel ul li a:hover {
+    color: white;
+}
+
+
 .copyright-text {
-    margin-bottom: 0px;
+    margin-bottom: 24px;
     color: #ffffff80;
 }
 
 /* --- --- --- --- Section contents --- --- --- --- */
 
-.home-content, 
+.home-content,
 .about-content,
 .work-content {
     flex: 1;
@@ -217,7 +222,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+
 }
 
 .profile-div img {
