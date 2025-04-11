@@ -71,32 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-/* --- Contact-panel -> Footer on smartphones --- */
-document.addEventListener('DOMContentLoaded', () => {
-    const contactPanel = document.querySelector('.contact-panel');
-    const footer = document.querySelector('.footer');
-    const originalParent = contactPanel.parentElement;
-
-    const moveContactPanel = () => {
-        if (window.innerWidth <= 768) {
-            if (!footer.contains(contactPanel)) {
-                footer.prepend(contactPanel); // Move contact-panel into footer
-            }
-        } else {
-            if (originalParent && !originalParent.contains(contactPanel)) {
-                originalParent.appendChild(contactPanel); // Restore contact-panel
-            }
-        }
-    };
-
-    // Initial check
-    moveContactPanel();
-
-    // Re-check on window resize
-    window.addEventListener('resize', moveContactPanel);
-});
-
 // Toggle profile image change on click
 document.addEventListener('DOMContentLoaded', function () {
     const profileImg = document.querySelector('.profile-div img');

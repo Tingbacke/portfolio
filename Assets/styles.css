@@ -9,9 +9,6 @@ body {
     background-color: #8E7DBE;
 }
 
-
-
-
 .sections {
     background-image: url('Images/bg.svg');
     background-size: cover;
@@ -19,21 +16,25 @@ body {
     background-position: center;
 }
 
-/* --- --- --- --- MENU PANES --- --- --- --- */
+/* --- --- --- --- MENU --- --- --- --- */
 
-/* Menu panel */
 .menu-panel {
     display: flex;
     position: fixed;
     top: 0;
     height: 200px;
-    width: 180px;
+    width: 160px;
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    background-color: #E69DB810;
+    background-color: #FFD0C7;
+    border-radius: 0 0 24px 0;
     margin-left: 0px;
-    border-right: 2px solid #00000060;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 4px 4px 8px #00000010;
+    padding-top: 6px;
+    padding-bottom: 12px;
 }
 
 .menu-panel ul {
@@ -45,9 +46,9 @@ body {
 .menu-panel ul li {
     margin: 42px 0;
     font-size: 18px;
+    margin-left: -4px;
 }
 
-/* Base styles for menu items */
 .menu-panel ul li a {
     text-decoration: none;
     font-size: 18px;
@@ -55,19 +56,12 @@ body {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for menu items */
-.menu-panel ul li a:hover {
-    color: #ffffff;
-}
-
-/* Styles for the active menu item */
 .menu-panel ul li.active a {
     font-weight: bold;
     color: #1a1a1a;
     position: relative;
 }
 
-/* Underline effect for the active menu item */
 .menu-panel ul li.active a::after {
     content: '';
     position: absolute;
@@ -80,10 +74,8 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Initial state for inactive menu items (no underline) */
 .menu-panel ul li:not(.active) a::after {
-    transform: scaleX(0);
-    /* Hide underline */
+    transform: scaleX(0); /* Hide underline */
 }
 
 /* --- --- --- --- SECTION HEADERS --- --- --- --- */
@@ -115,7 +107,6 @@ body {
 
 }
 
-
 /* --- --- --- --- SECTIONS --- --- --- --- */
 
 .home,
@@ -144,7 +135,6 @@ body {
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
-
 }
 
 .contact-panel ul {
@@ -169,11 +159,6 @@ body {
     transition: color 0.3s;
 }
 
-.contact-panel ul li a:hover {
-    color: white;
-}
-
-
 .copyright-text {
     margin-bottom: 24px;
     color: #ffffff80;
@@ -192,7 +177,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: #00000060 solid 1px;
+    border-bottom: #FFEBCE60 solid 1px;
 }
 
 /* --- --- --- --- Home container --- --- --- --- */
