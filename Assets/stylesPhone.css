@@ -11,70 +11,58 @@
 
     .menu-panel {
         display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         top: 0;
-        left: 0;
         width: 100%;
         height: 60px;
         z-index: 1000;
         background-color: #FFD0C7;
-        padding: 0;
-        border-right: 0px solid black;
-        border-bottom: 0px solid black;
-        border-radius: 0 0 16px 16px;
         box-shadow: 0px 4px 4px #00000020;
-        align-items: center;
-        justify-content: center;
+        padding: 0;
     }
-    
+
     .menu-panel ul {
         display: flex;
         list-style: none;
         padding: 0;
         margin: 0;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
         box-sizing: border-box;
     }
-    
-    .menu-panel ul li {
-        margin: 0 8px;
-        font-size: 16px;
-        position: relative; /* for underline positioning */
-    }
-    
+
     .menu-panel ul li a {
         text-decoration: none;
         font-size: 16px;
         color: #1a1a1a;
-        transition: color 0.3s ease, transform 0.3s ease;
+        transition: color 0.3s ease;
         position: relative;
-        padding: 8px 0;
+        padding: 2px 0;
+        display: inline-block;
     }
-    
+
     .menu-panel ul li a::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
         width: 100%;
-        background-color: #000;
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.3s ease;
     }
-    
-    .menu-panel ul li.active a {
-        font-weight: bold;
-        color: #1a1a1a;
-    }
-    
+
     .menu-panel ul li.active a::after {
         transform: scaleX(1);
-        bottom: 0px;
+ 
     }
-    
+
+    .menu-panel ul li.active a {
+        font-weight: bold;
+    }
+
     /* --- --- --- FOOTER --- --- --- */
 
     .footer {
@@ -96,12 +84,7 @@
         justify-content: center;
         padding: 0;
         margin: 0;
-        color: white;
         gap: 0px;
-    }
-
-    .contact-panel ul li {
-        
     }
 
     .copyright-text {
@@ -113,7 +96,7 @@
     .about,
     .work {
         padding: 0 16px;
-        padding-top: 60px;
+        padding-top: 40px;
     }
 
     .home-content,
@@ -146,30 +129,26 @@
     }
 
     .profile-div {
-        gap: 16px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: -64px;
     }
 
     .profile-div img {
-        width: 220px;
+        width: 260px;
     }
 
     .profile-info {
-        width: 90%;
-        margin-top: -80px;
+        margin-top: -40px;
+    }
+    .profile-div .name {
+        font-size: 2.5rem;
         text-align: center;
     }
 
-    .profile-div .name {
-        font-size: 2.5rem;
-    }
-
     .profile-div .description {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     /* --- About Container --- */
