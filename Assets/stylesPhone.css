@@ -1,10 +1,11 @@
 @media (max-width: 768px) {
-    body {
+    html, body {
         min-height: 100vh;
         height: -webkit-fill-available;
         /* iOS Safari fix (see also home-container) */
         font-size: 14px;
         padding: 0;
+        overflow-x: hidden;
     }
 
     /* --- --- --- --- MENU PANEL --- --- --- --- */
