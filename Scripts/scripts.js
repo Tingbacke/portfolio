@@ -79,10 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
         profileImg.style.cursor = 'pointer'; // Ensure hand cursor
 
         profileImg.addEventListener('click', function () {
-            profileImg.src = profileImg.src.includes('jt.png') 
-                ? 'Assets/Images/jt2.png' 
-                : 'Assets/Images/jt.png';
+            if (profileImg.src.includes('jt.png')) {
+                profileImg.src = 'Assets/Images/jt2.png';
+                profileImg.alt = 'Portrait photograph of Johan, the website author and designer.';
+            } else {
+                profileImg.src = 'Assets/Images/jt.png';
+                profileImg.alt = 'Cartoon-style portrait of Johan, the website author and designer.';
+            }
         });
+
     }
 });
 
