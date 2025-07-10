@@ -13,6 +13,21 @@ body {
     background-color: #E69DB8;
 }
 
+/* --- --- --- --- --- --- --- --- --- */
+/* --- --- --- - TEMP TEXT - --- --- --- */
+/* --- --- --- --- --- --- --- --- --- */
+.p-note{
+    margin: 0;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.span-note{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
 /* --- --- --- --- MENU --- --- --- --- */
 
 .menu-panel {
@@ -191,8 +206,8 @@ body {
 }
 
 .profile-img-wrapper {
-    width: 360px;
-    height: 360px;
+    width: 320px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +216,7 @@ body {
 }
 
 .profile-div img {
-    width: 340px;
+    width: 300px;
     height: auto;
     transition: opacity 0.3s ease-in-out;
     cursor: pointer;
